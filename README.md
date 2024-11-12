@@ -38,3 +38,54 @@ Outline solutions that integrate these patterns into a cohesive design to addres
 ## Project Execution Simulation
 
 Simulate the application of these patterns in a hypothetical software project. Document the approach, rationale, and integration process of the chosen patterns as they apply to the design challenges.
+
+
+
+
+
+
+# Implementación de Patrones de Diseño en el Sistema de Tienda
+
+Este proyecto utiliza varios patrones de diseño para crear un sistema de tienda estructurado, flexible y eficiente. A continuación, se detallan los patrones implementados y su propósito en el sistema.
+
+---
+
+## 1. Singleton - Configuración Global de la Tienda
+
+- **Propósito**: Garantizar que solo haya una única instancia de la configuración de la tienda en toda la aplicación.
+
+- **Cómo se aplicó**:
+  Se creó una clase de configuración que almacena datos generales, como el impuesto y el descuento de la tienda. Esta clase es única en toda la aplicación, lo cual asegura que cualquier cambio en estos valores se refleje en toda la tienda. Con esto evitamos inconsistencias y ahorramos recursos.
+
+---
+
+## 2. Factory - Creación Dinámica de un Producto
+
+- **Propósito**: Permitir la creación flexible de distintos tipos de productos sin tener que cambiar el código cada vez que se añada un nuevo tipo.
+
+- **Cómo se aplicó**:
+  Se creó un mecanismo para generar productos de diferentes tipos (por ejemplo, ropa, alimentos o electrodomésticos) en función de las necesidades de la tienda. En lugar de definir cada tipo de producto por separado, usamos una fábrica que se encarga de crear el producto correcto según el tipo solicitado, lo que hace que el código sea más limpio y fácil de extender.
+
+---
+
+## 3. Observer - Notificación de Cambio en el Inventario del Producto
+
+- **Propósito**: Permitir que ciertos componentes de la tienda (como la interfaz de usuario o el sistema de alertas) sean notificados automáticamente cuando cambie el inventario de un producto.
+
+- **Cómo se aplicó**:
+  Se definió un sistema en el cual los observadores (por ejemplo, la interfaz de usuario o un sistema de alertas) están atentos a los cambios en el inventario. Cuando el inventario cambia (como después de una compra), estos observadores reciben automáticamente una notificación con el nuevo estado del inventario. Esto asegura que cualquier cambio se refleje de inmediato donde sea necesario.
+
+---
+
+## 4. Async - Procesamiento Asíncrono de la Compra
+
+- **Propósito**: Realizar compras de productos sin bloquear el funcionamiento principal de la tienda, permitiendo que otras operaciones sigan funcionando al mismo tiempo.
+
+- **Cómo se aplicó**:
+  Las operaciones de compra se configuraron para ejecutarse en segundo plano. Cuando un cliente hace una compra, el sistema procesa el pedido sin detener el funcionamiento general de la tienda. Esto hace que la tienda sea más eficiente, ya que permite procesar varias compras al mismo tiempo y mejora la experiencia del usuario al evitar tiempos de espera.
+
+---
+
+### Conclusión
+
+Estos cuatro patrones de diseño ayudan a mantener el sistema de la tienda organizado, flexible y eficiente, garantizando que funcione de forma correcta y ágil.
